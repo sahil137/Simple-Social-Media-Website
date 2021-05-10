@@ -1,0 +1,29 @@
+footer {
+  height: 50px;
+  background-color: darkgray;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.links {
+  position: relative;
+  margin: 0;
+}
+
+.links ul {
+  list-style: none;
+  margin: 0;
+}
+
+.links ul li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.links ul li a {
+  text-decoration: none;
+  color: white;
+}

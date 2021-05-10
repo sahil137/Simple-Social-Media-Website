@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  min-width: 1000px;
+  background-color: #1286F9;
+  font-family: sans-serif;
+  padding: 4px;
+  color: white;
+}
+
+.main-title {
+  text-align: center;
+  position: relative;
+  width: 200px;
+}
+
+.main-title h1 {
+  font-size: 1.7rem;
+  margin: 0;
+  position: absolute;
+}
+
+.links {
+  position: relative;
+  margin: 0;
+}
+
+.links ul {
+  list-style: none;
+  margin: 0;
+}
+
+.links ul li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.links ul li a {
+  text-decoration: none;
+  color: white;
+}
