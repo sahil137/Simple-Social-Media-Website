@@ -13,6 +13,12 @@
 
         <%- include('_header'); %>
 
+        <% if (flash.success && flash.success.length > 0){%>
+            <h4>
+                <%= flash.success %>
+            </h4>
+        <%} %>
+
         <%- body %>
 
         <%- include('_footer'); %>
