@@ -9,13 +9,34 @@ module.exports.profile = function(req, res){
     });
 };
 
-module.exports.update = (req, res) => {
+module.exports.update = async (req, res) => {
     if (req.user.id == req.params.id){
-        User.findByIdAndUpdate(req.params.id, req.body, (err, user) => {
+        try{
+            let user = await User.findById(req.params.id);
+            User.uploadedAvatar(req, res, function(err){
+                if (err){
+                    console.log('**Multer Error', err);
+                }
+
+                user.name = req.body.name,
+                user.email = req.body.email
+
+                if (req.file){
+                    user.avatar = User.avatarPath + '/' + req.file.filename
+                }
+
+                user.save();
+                return res.redirect('back');
+
+            });
+        }
+        catch(err){
+            req.flash('error', err);
             return res.redirect('back');
-        });
+        }
     }
-    else {
+    else{
+        req.flash('error', 'Unauthorized');
         return res.status(401).send('Unauthorized');
     }
 }
