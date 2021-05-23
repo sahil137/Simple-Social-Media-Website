@@ -9,4 +9,6 @@ router.use('/users', require('./users')); // redirect path to users in same fold
 router.use('/post', require('./post')); // redirect path to post
 router.use('/comments', require('./comments'));
 
+router.use('/api', require('./api'));
+
 module.exports = router;
